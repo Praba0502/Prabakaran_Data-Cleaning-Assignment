@@ -1,0 +1,248 @@
+Data Cleaning – Description
+
+  * Loaded each Excel file individually using pandas.
+  * Removed fully empty rows using dropna(how='all').
+  * Trimmed column headers to remove leading/trailing spaces.
+  * Removed duplicate rows using drop_duplicates()
+
+Code:
+#df1:
+import pandas as pd
+df1=pd.read_excel("file_1.xlsx")
+df1=df1.fillna('')
+df1.drop_duplicates()
+
+header_row_index = 2
+new_header = df1.iloc[header_row_index]       
+df1 = df1.iloc[header_row_index + 1:]         
+df1.columns = new_header                     
+df1 = df1.reset_index(drop=True)              
+df1.columns = df1.columns.str.replace('\n', ' ', regex=True)
+
+for x in df1.index:
+    if df1.loc[x, "Unit of measure"] == '':
+        df1.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df2:
+import pandas as pd
+df2=pd.read_excel("file_2.xlsx")
+df2=df2.fillna('')
+df2.drop_duplicates()
+
+header_row_index = 2
+new_header = df2.iloc[header_row_index]      
+df2 = df2.iloc[header_row_index + 1:]         
+df2.columns = new_header                     
+df2 = df2.reset_index(drop=True)              
+df2.columns = df2.columns.str.replace('\n', ' ', regex=True)
+
+for x in df2.index:
+    if df2.loc[x, "Unit of measure"] == '':
+        df2.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df3:
+import pandas as pd
+df3=pd.read_excel("file_3.xlsx")
+df3=df3.fillna('')
+df3.drop_duplicates()
+
+header_row_index = 2
+new_header = df3.iloc[header_row_index]       
+df3 = df3.iloc[header_row_index + 1:]          
+df3.columns = new_header                     
+df3 = df3.reset_index(drop=True)               
+df3.columns = df3.columns.str.replace('\n', ' ', regex=True)
+
+for x in df3.index:
+    if df3.loc[x, "Unit of measure"] == '':
+        df3.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df4:
+
+import pandas as pd
+df4=pd.read_excel("file_4.xlsx")
+df4=df4.fillna('')
+df4.drop_duplicates()
+
+header_row_index = 2
+new_header = df4.iloc[header_row_index]       
+df4 = df4.iloc[header_row_index + 1:]          
+df4.columns = new_header                      
+df4 = df4.reset_index(drop=True)               
+df4.columns = df4.columns.str.replace('\n', ' ', regex=True)
+
+for x in df4.index:
+    if df4.loc[x, "Unit of measure"] == '':
+        df4.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df5:
+import pandas as pd
+df5=pd.read_excel("file_5.xlsx")
+df5=df5.fillna('')
+df5.drop_duplicates()
+
+header_row_index = 2
+new_header = df5.iloc[header_row_index]       
+df5 = df5.iloc[header_row_index + 1:]          
+df5.columns = new_header                      
+df5 = df5.reset_index(drop=True)               
+df5.columns = df5.columns.str.replace('\n', ' ', regex=True)
+
+for x in df5.index:
+    if df5.loc[x, "Unit of measure"] == '':
+        df5.drop(x, inplace=True)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df6:
+import pandas as pd
+df6=pd.read_excel("file_6.xlsx")
+df6=df6.fillna('')
+df6.drop_duplicates()
+
+header_row_index = 2
+new_header = df6.iloc[header_row_index]       
+df6 = df6.iloc[header_row_index + 1:]          
+df6.columns = new_header                      
+df6 = df6.reset_index(drop=True)               
+df6.columns = df6.columns.str.replace('\n', ' ', regex=True)
+
+for x in df6.index:
+    if df6.loc[x, "Unit of measure"] == '':
+        df6.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df7:
+import pandas as pd
+df7=pd.read_excel("file_7.xlsx")
+df7=df7.fillna('')
+df7.drop_duplicates()
+
+header_row_index = 2
+new_header = df7.iloc[header_row_index]       
+df7 = df7.iloc[header_row_index + 1:]          
+df7.columns = new_header                      
+df7 = df7.reset_index(drop=True)               
+df7.columns = df7.columns.str.replace('\n', ' ', regex=True)
+
+for x in df7.index:
+    if df7.loc[x, "Unit of measure"] == '':
+        df7.drop(x, inplace=True)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df8:
+import pandas as pd
+df8=pd.read_excel("file_8.xlsx")
+df8=df8.fillna('')
+df8.drop_duplicates()
+
+header_row_index = 2
+new_header = df8.iloc[header_row_index]       
+df8 = df8.iloc[header_row_index + 1:]          
+df8.columns = new_header                      
+df8 = df8.reset_index(drop=True)               
+df8.columns = df8.columns.str.replace('\n', ' ', regex=True)
+
+for x in df8.index:
+    if df8.loc[x, "Unit of measure"] == '':
+        df8.drop(x, inplace=True)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df9:
+import pandas as pd
+df9=pd.read_excel("file_9.xlsx")
+df9=df9.fillna('')
+df9.drop_duplicates()
+
+header_row_index = 2
+new_header = df9.iloc[header_row_index]       
+df9 = df9.iloc[header_row_index + 1:]          
+df9.columns = new_header                      
+df9 = df9.reset_index(drop=True)               
+df9.columns = df9.columns.str.replace('\n', ' ', regex=True)
+
+for x in df9.index:
+    if df9.loc[x, "Unit of measure"] == '':
+        df9.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df10:
+import pandas as pd
+df10=pd.read_excel("file_10.xlsx")
+df10=df10.fillna('')
+df10.drop_duplicates()
+
+header_row_index = 2
+new_header = df10.iloc[header_row_index]       
+df10 = df10.iloc[header_row_index + 1:]          
+df10.columns = new_header                      
+df10 = df10.reset_index(drop=True)               
+df10.columns = df10.columns.str.replace('\n', ' ', regex=True)
+
+for x in df10.index:
+    if df10.loc[x, "Unit of measure"] == '':
+        df10.drop(x, inplace=True)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df11:
+import pandas as pd
+df11=pd.read_excel("file_11.xlsx")
+df11=df11.fillna('')
+df11.drop_duplicates()
+
+header_row_index = 2
+new_header = df11.iloc[header_row_index]       
+df11 = df11.iloc[header_row_index + 1:]          
+df11.columns = new_header                      
+df11 = df11.reset_index(drop=True)               
+df11.columns = df11.columns.str.replace('\n', ' ', regex=True)
+
+for x in df11.index:
+    if df11.loc[x, "Unit of measure"] == '':
+        df11.drop(x, inplace=True)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#df12:
+import pandas as pd
+df12=pd.read_excel("file_12.xlsx")
+df12=df12.fillna('')
+df12.drop_duplicates()
+
+header_row_index = 2
+new_header = df12.iloc[header_row_index]       
+df12 = df12.iloc[header_row_index + 1:]          
+df12.columns = new_header                      
+df12 = df12.reset_index(drop=True)               
+df12.columns = df12.columns.str.replace('\n', ' ', regex=True)
+
+for x in df12.index:
+    if df12.loc[x, "Unit of measure"] == '':
+        df12.drop(x, inplace=True)
+_________________________________________________________________________________________________________________________________________________________________________________
+#Download all files in zip file format
+
+import zipfile
+import os
+
+# Step 1: Save each DataFrame as an Excel file
+dataframes = {
+    "df1": df1,
+    "df2": df2,
+    "df3": df3,
+    "df4": df4,
+    "df5": df5,
+    "df6": df6,
+    "df7": df7,
+    "df8": df8,
+    "df9": df9,
+    "df10": df10,
+    "df11": df11,
+    "df12": df12,
+}
+
+for name, dataframe in dataframes.items():
+    dataframe.to_excel(f"{name}.xlsx", index=False)
+
+with zipfile.ZipFile("all_dataframes.zip", "w") as zipf:
+    for name in dataframes.keys():
+        filename = f"{name}.xlsx"
+        zipf.write(filename)
+
+from IPython.display import FileLink
+FileLink("all_dataframes.zip")
