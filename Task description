@@ -1,0 +1,22 @@
+Data Cleaning Assignment
+
+# Tools Used
+- Python
+- Google Colab
+- Pandas
+- pdfplumber
+
+Task Breakdown:
+1. PDF to Excel Conversion
+- Extracted tabular data from invoice PDFs using `pdfplumber`
+- Saved each page’s table as individual Excel files
+
+### 2. Data Cleaning & Merging
+- Removed blank rows, duplicate entries, and standardized column names
+- Merged 12 Excel files into a single master file
+
+### 3. Final Formatting
+- Aligned merged data with the reference format (`Swiggy_Tax_Sample_file.xlsx`)
+
+### 📂 Final Output File
+- `Data_Cleaning.xlsx` 
