@@ -1,0 +1,42 @@
+Data Merging & Final Formatting
+
+ * Combine all cleaned Excel files into a single structured file 
+ * All cleaned Excel files (prefixed with cleaned_) were merged into a single pandas DataFrame using a loop.
+ * Removed any remaining duplicate rows to ensure data integrity.
+ * Reordered columns to match the exact format
+ * Platform - Jupyter Notebook 
+
+Code:
+  
+Data_Cleaning=pd.concat([df, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12], ignore_index=True)
+Data_Cleaning['Sr. no.'] = range(1, len(Data_Cleaning) + 1) # for series  
+
+Data_Cleaning.to_excel("Data_Cleaning.xlsx", index=False)
+import IPython
+from IPython.display import FileLink
+FileLink("Data_Cleaning.xlsx")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
