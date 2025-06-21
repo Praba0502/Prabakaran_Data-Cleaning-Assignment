@@ -1,0 +1,428 @@
+# convert the pdf file to excel file:
+
+code:
+#I used Google Colab to convert PDF files into Excel format using Python.
+
+import os
+import pandas as pd
+!pip install pdfplumber openpyxl
+import pdfplumber
+
+#file_1
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_445384_09042025_250409FS29006872.pdf"
+excel_output = "file_1.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print("Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+    
+from google.colab import files
+files.download("file_1.xlsx")
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#file_2
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_570268_09042025_250409FS29006449.pdf"
+excel_output = "file_2.xlsx"
+
+tables_combined = []
+
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+    
+from google.colab import files
+files.download("file_2.xlsx")
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#file_3
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_593472_09042025_250409FS29003032.pdf"
+excel_output = "file_3.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_3.xlsx")
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_4
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_180796_09042025_250409FS29011371.pdf"
+excel_output = "file_4.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+     final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_4.xlsx")
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_5
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_180801_09042025_250409FS29007230.pdf"
+excel_output = "file_5.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+…    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_5.xlsx")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_6
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_231392_09042025_250409FS29007041.pdf"
+excel_output = "file_6.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_6.xlsx")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_7
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_313834_09042025_250409FS29011069.pdf"
+excel_output = "file_7.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_7.xlsx")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_8
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_330114_09042025_250409FS29011158.pdf"
+excel_output = "file_8.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_8.xlsx")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_9
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_444423_09042025_250409FS29002733.pdf"
+excel_output = "file_9.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+    
+from google.colab import files
+files.download("file_9.xlsx")
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_10
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_408_09042025_250409FS29010820.pdf"
+excel_output = "file_10.xlsx"
+tables_combined = []
+
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_10.xlsx")
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_11
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_4780_09042025_250409FS29009158.pdf"
+excel_output = "file_11.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        if col in seen:
+            seen[col] += 1
+            new_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_columns.append(col)
+    return new_columns
+
+with pdfplumber.open(pdf_path) as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:
+                df = pd.DataFrame(table[1:], columns=table[0])
+                df.columns = make_unique_columns(df.columns)
+                df.reset_index(drop=True, inplace=True)
+                tables_combined.append(df)
+
+if tables_combined:
+    final_df = pd.concat(tables_combined, ignore_index=True)
+    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+from google.colab import files
+files.download("file_11.xlsx")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#file_12
+from google.colab import files
+uploaded = files.upload()
+pdf_path = "taco_Tax_Invoice_600278_09042025_250409FS29010197.pdf"
+excel_output = "file_12.xlsx"
+
+tables_combined = []
+def make_unique_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+…    final_df.to_excel(excel_output, index=False)
+    print(" Excel file created:", excel_output)
+else:
+    print(" No tables found in the PDF.")
+
+
+from google.colab import files
+files.download("file_12.xlsx")
+
+------------------------------------------------------Continue-----------------------------------------------------------------------------------------
